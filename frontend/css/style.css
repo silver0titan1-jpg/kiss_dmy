@@ -1,0 +1,354 @@
+
+         :root {
+            --plat: #F1F2EE;
+            --encre: #1F2B2A;
+            --petrole: #2E5560;
+            --sable: #D9D2C1;
+            --sauge: #8A9A86;
+            --trait: rgba(31, 43, 42, .25)
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            margin: 0;
+            background: var(--plat);
+            color: var(--encre);
+            font: 400 1.0625rem/1.6 "Hanken Grotesk", system-ui, sans-serif
+        }
+        
+        h1,
+        h2 {
+            font-family: "Instrument Serif", Georgia, serif;
+            font-weight: 400;
+            line-height: 1.05;
+            margin: 0
+        }
+        
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4.4rem)
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem)
+        }
+        
+        p {
+            margin: 0;
+            max-width: 60ch
+        }
+        
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+            color: inherit
+        }
+        
+        button {
+            cursor: pointer
+        }
+        
+        :focus-visible {
+            outline: 3px solid var(--petrole);
+            outline-offset: 2px
+        }
+        
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.25rem
+        }
+        
+        header {
+            border-bottom: 1px solid var(--trait)
+        }
+        
+        header .wrap {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            flex-wrap: wrap
+        }
+        
+        .marque {
+            font: 400 1.7rem "Instrument Serif", Georgia, serif;
+            margin-right: auto
+        }
+        
+        nav {
+            display: flex;
+            gap: 1.25rem
+        }
+        
+        a {
+            color: inherit
+        }
+        
+        .btn {
+            border: 1.5px solid var(--encre);
+            background: transparent;
+            padding: .55rem 1rem;
+            border-radius: 2px;
+            text-decoration: none;
+            display: inline-block
+        }
+        
+        .btn:hover,
+        .btn[aria-pressed="true"] {
+            background: var(--encre);
+            color: var(--plat)
+        }
+        
+        .btn.plein {
+            background: var(--petrole);
+            border-color: var(--petrole);
+            color: var(--plat)
+        }
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3.5rem 0
+        }
+        
+        .hero p {
+            margin: 1.25rem 0 1.75rem
+        }
+        
+        .plan {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 112px);
+            gap: 3px;
+            background: var(--encre);
+            border: 3px solid var(--encre)
+        }
+        
+        .salle {
+            background: var(--plat);
+            border: 0;
+            text-align: left;
+            padding: .75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+        
+        .salle:hover {
+            background: var(--sable)
+        }
+        
+        .salle[aria-pressed="true"] {
+            background: var(--petrole);
+            color: var(--plat)
+        }
+        
+        .salle .nom {
+            font: 400 1.5rem/1.1 "Instrument Serif", Georgia, serif
+        }
+        
+        .salle .nb {
+            font-size: .85rem
+        }
+        
+        .legende {
+            font-size: .9rem;
+            margin-top: .6rem;
+            color: var(--petrole)
+        }
+        
+        section {
+            padding: 3rem 0;
+            border-top: 1px solid var(--trait)
+        }
+        
+        .tete {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem
+        }
+        
+        .tete .btn {
+            margin-left: auto
+        }
+        
+        #galerie {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1.5rem
+        }
+        
+        .carte {
+            margin: 0
+        }
+        
+        .vue {
+            aspect-ratio: 3/2;
+            display: grid;
+            place-items: center;
+            font-size: .9rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, hsl(var(--h) 20% 80%), hsl(var(--h) 24% 62%))
+        }
+        
+        .vue img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        figcaption {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .6rem 0 .2rem
+        }
+        
+        figcaption span {
+            color: var(--petrole)
+        }
+        
+        .retirer {
+            display: none;
+            border: 0;
+            background: none;
+            text-decoration: underline;
+            padding: 0
+        }
+        
+        .vide {
+            padding: 2rem 0
+        }
+        
+        #ajouter {
+            display: none;
+            background: var(--sable)
+        }
+        
+        body.admin #ajouter {
+            display: block
+        }
+        
+        body.admin .retirer {
+            display: inline-block
+        }
+        
+        form.grille {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+            margin-top: 1.25rem
+        }
+        
+        label {
+            display: grid;
+            gap: .3rem;
+            font-weight: 500
+        }
+        
+        input,
+        select,
+        textarea {
+            background: var(--plat);
+            border: 1.5px solid var(--encre);
+            border-radius: 2px;
+            padding: .55rem .7rem;
+            width: 100%
+        }
+        
+        .aide {
+            font-size: .9rem;
+            margin-top: .75rem
+        }
+        
+        .duo {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem
+        }
+        
+        .duo p {
+            margin-top: 1rem
+        }
+        
+        .salon {
+            border: 1.5px solid var(--encre);
+            display: grid;
+            grid-template-rows: 290px auto
+        }
+        
+        #fil {
+            overflow: auto;
+            padding: 1rem;
+            display: grid;
+            gap: .75rem;
+            align-content: start
+        }
+        
+        .msg {
+            max-width: 85%;
+            padding: .5rem .8rem;
+            border-radius: 2px
+        }
+        
+        .msg p {
+            max-width: none
+        }
+        
+        .msg.archi {
+            background: var(--sable)
+        }
+        
+        .msg.client {
+            background: var(--petrole);
+            color: var(--plat);
+            justify-self: end
+        }
+        
+        #envoi {
+            display: flex;
+            gap: .5rem;
+            padding: .75rem;
+            border-top: 1.5px solid var(--encre)
+        }
+        
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--trait);
+            font-size: .95rem
+        }
+        
+        @media(max-width:760px) {
+            .hero,
+            .duo {
+                grid-template-columns: 1fr;
+                gap: 2rem
+            }
+            .plan {
+                grid-template-rows: repeat(3, 92px)
+            }
+            .salle .nom {
+                font-size: 1.2rem
+            }
+        }
+        
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }

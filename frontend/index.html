@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Atelier – Architecte d’intérieur</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap">
+            <div class="marque">
+                Atelier Votre Nom
+            </div>
+
+            <nav>
+                <a href="#realisations">Réalisations</a>
+                <a href="#discussion">Discussion</a>
+            </nav>
+
+            <button class="btn" id="mode" aria-pressed="false">
+                Espace architecte
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="wrap hero">
+
+            <div>
+                <h1>
+                    Des intérieurs pensés pièce par pièce
+                </h1>
+
+                <p>
+                    Choisissez une pièce sur le plan pour voir les réalisations de
+                    l’atelier : salon, cuisine, chambre, salle de bain, bureau et entrée.
+                </p>
+
+                <a class="btn plein" href="#realisations">
+                    Voir les réalisations
+                </a>
+            </div>
+
+            <div>
+
+                <div
+                    class="plan"
+                    id="plan"
+                    role="group"
+                    aria-label="Plan de la maison : choisir une pièce">
+                </div>
+
+                <p class="legende">
+                    Cliquez à nouveau sur une pièce pour revenir à toutes les réalisations.
+                </p>
+
+            </div>
+
+        </div>
+
+        <section id="ajouter">
+
+            <div class="wrap">
+
+                <h2>Ajouter une réalisation</h2>
+
+                <form class="grille" id="ajout">
+
+                    <label>
+                        Titre
+                        <input
+                            name="titre"
+                            required
+                            placeholder="Ex. Appartement Lyon 6e">
+                    </label>
+
+                    <label>
+                        Pièce
+                        <select name="piece" id="choix"></select>
+                    </label>
+
+                    <label>
+                        Photo en paysage
+                        <input
+                            type="file"
+                            name="photo"
+                            accept="image/*"
+                            required>
+                    </label>
+
+                    <button class="btn plein" type="submit">
+                        Ajouter la réalisation
+                    </button>
+
+                </form>
+
+                <p class="aide" id="etat" aria-live="polite">
+                    Visez environ 10 photos par pièce, en format paysage.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section id="realisations">
+
+            <div class="wrap">
+
+                <div class="tete">
+
+                    <h2 id="titre-galerie">
+                        Toutes les pièces
+                    </h2>
+
+                    <button class="btn" id="tout" hidden>
+                        Voir toutes les pièces
+                    </button>
+
+                </div>
+
+                <div id="galerie"></div>
+
+            </div>
+
+        </section>
+
+        <section id="discussion">
+
+            <div class="wrap duo">
+
+                <div>
+
+                    <h2>
+                        Parlons de votre projet
+                    </h2>
+
+                    <p>
+                        Écrivez directement à l’architecte :
+                        décrivez la pièce à transformer,
+                        vos envies et votre calendrier.
+                        Elle vous répond dans cet espace.
+                    </p>
+
+                    <p class="aide">
+                        Version de présentation :
+                        les messages restent affichés tant que la page est ouverte.
+                    </p>
+
+                </div>
+
+                <div class="salon">
+
+                    <div id="fil" aria-live="polite"></div>
+
+                    <form id="envoi">
+
+                        <input
+                            id="texte"
+                            aria-label="Votre message"
+                            placeholder="Votre message"
+                            autocomplete="off">
+
+                        <button class="btn plein" type="submit">
+                            Envoyer
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            Atelier Votre Nom, architecte d’intérieur –
+            contact@exemple.fr
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
