@@ -1,28 +1,30 @@
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
-app.use("/uploads", express.static("uploads"));
-
-app.use("/api/projets", require("./routes/projets"));
-app.use("/api/messages", require("./routes/messages"));
-app.use("/api/users", require("./routes/users"));
-
 app.use(
-  express.static(
-    path.join(__dirname, "../frontend")
-  )
+    "/images",
+    express.static(
+        path.join(__dirname, "../frontend/images")
+    )
 );
 
-const PORT = 3000;
+app.use(
+    "/api/images",
+    require("./routes/images")
+);
 
-app.listen(PORT, () => {
-  console.log(
-    `Serveur démarré sur http://localhost:${PORT}`
-  );
+app.use(
+    express.static(
+        path.join(__dirname, "..")
+    )
+);
+
+app.listen(3000, () => {
+    console.log(
+        "Serveur démarré sur http://localhost:3000"
+    );
 });
